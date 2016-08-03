@@ -1,0 +1,5 @@
+= Brawlhalla Subreddit Bot
+Sammy Gillespie <sammygillespie@gmail.com>
+2016-08-03
+
+This readme aims to provide an overview of the functions that this bot/server provides. But I'll do that later.
