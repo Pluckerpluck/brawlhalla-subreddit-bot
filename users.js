@@ -3,14 +3,14 @@ var MongoClient = require("mongodb").MongoClient;
 module.exports = {
   db: null,
   ready: false,
- 
+
   init: function(uri, opts) {
     MongoClient.connect(uri, opts, function(err, connection){
       ready = true;
       db = connection;
     });
     return this;
-  }, 
+  },
 
   findOrCreate: function(profile, done){
     if (!ready){
@@ -24,7 +24,7 @@ module.exports = {
       if (result != null){
         done(err, result)
       }else{
-        
+
         var newUser = {
           "redditID": profile.id,
           "name": profile.name,
@@ -32,7 +32,7 @@ module.exports = {
              "requestTournament"
            ]
         }
-          
+
         users.insertOne(newUser, function(err, result) {
           console.log("Created new user " + newUser.name)
 	  done(err, newUser);
