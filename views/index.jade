@@ -1,0 +1,33 @@
+extend layout
+block content
+  p
+    | Hello #{name}!
+  p 
+    | Welcome to the #[a(href="https://www.reddit.com/r/brawlhalla") /r/brawlhalla] toolbox website.
+    | This website aims to provide a useful set of tools for
+    | both the users and moderators of
+    | #[a(href="https://www.reddit.com/r/brawlhalla") /r/brawlhalla]
+  p
+    | From being able to request new tournaments for the sidebar,
+    | to being able to have the events in a "proper" calendar,
+    | it will all be avaliable here .... in time ... maybe...
+  hr
+  a(href="/tournament") Request a tournament
+block sidebar
+  .widget
+    if !loggedIn
+      h1 Login
+      p
+        | #[a(href="/auth") Authorize with reddit!] 
+      p
+        | In order to make use of any "interactive" features
+        | you must first login with reddit.
+      p 
+        | Authorization via reddit is safe and secure. All authentication is done
+        | on reddit servers, and then reddit tells us who you are. We don't ever
+        | see any of your private information.
+    else
+      p
+        | #[a(href="/logout") Logout]
+      p 
+        | This isn't actually implemented yet ... so ignore it

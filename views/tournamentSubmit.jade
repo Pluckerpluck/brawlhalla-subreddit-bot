@@ -1,0 +1,29 @@
+extend layout
+block content
+  p
+    | Here you can request a new tournament for the subreddit sidebar
+  hr
+  form(name="tournament", method="post" action="/tournament/request")
+    div.form-group
+      label(for="name") Tournament Name
+      input.form-control(name="name" type="text" id="name" placeholder="Name" required="true")
+    div.form-group
+      label(for="date") Date of Tournament
+      input.form-control(name="date" type="date" id="date" required="true")
+    div.form-group
+      label(for="prizes") Prizes
+      textarea.form-control(name="prizes" id="prizes" placeholder="What are the prizes?" required="true")
+    div.form-group
+      label(for="url") Reddit Link
+      input.form-control(name="url" type="url" id="url" placeholder="Link to the corrsponding reddit post")
+    div.form-group
+      input.form-control(type="submit" id="submit" value="Submit")
+
+
+block sidebar
+  .widget
+    p
+      | #[a(href="/logout") Logout]
+    p
+      | 
+
